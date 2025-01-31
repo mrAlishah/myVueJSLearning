@@ -1,20 +1,18 @@
 <template>
+  <div>
     <div>
-        <div>
-          {{ todo.title}}
-        </div>
-    </div>  
+      {{ todo.title }}
+    </div>
+  </div>
 </template>
 
 <script setup>
- 
- defineProps({
-    todo:{
-      type:Object,
-      required:true  
-    }
- })
+defineProps({
+  todo: {
+    type: Object,
+    required: true,
+  },
+})
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
