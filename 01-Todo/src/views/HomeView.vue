@@ -17,11 +17,13 @@ const todos = [
 </script>
 
 <template>
-  <div class="header">
-    <div>
-      <h3>Todo</h3>
+  <div>
+    <div class="header">
+      <div>
+        <h3>Todo</h3>
+      </div>
+      <button>Show Todo</button>
     </div>
-    <button>Show Todo</button>
 
     <div v-for="todo in todos" :key="todo.id">
       <Wrapper>
