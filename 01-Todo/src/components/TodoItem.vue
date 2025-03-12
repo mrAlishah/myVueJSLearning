@@ -6,6 +6,7 @@
       <div class="action">
         <button class="material-icons del">delete</button>
         <label class="container">
+          {{ todo.done ? 'Done' : 'Pending' }}
           <input type="checkbox" :checked="todo.done" />
           <span class="checkmark"></span>
         </label>
