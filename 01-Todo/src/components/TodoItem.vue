@@ -4,10 +4,10 @@
       <span>date: {{ todo.createdAt }}</span>
 
       <div class="action">
-        <button class="material-icons del">delete</button>
+        <button class="material-icons del" @click="console.log('Event Delete fired')">delete</button>
         <label class="container">
           {{ todo.done ? 'Done' : 'Pending' }}
-          <input type="checkbox" :checked="todo.done" />
+          <input type="checkbox" :checked="todo.done" @input="console.log('Event onChanged fired')"/>
           <span class="checkmark"></span>
         </label>
       </div>
