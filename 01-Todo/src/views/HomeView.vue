@@ -1,30 +1,9 @@
 <script setup>
 import TodoItem from '@/components/TodoItem.vue'
 import Wrapper from '@/components/Wrapper.vue'
+import { useTodoStore } from '@/stores/TodoStore'
 
-const todos = [
-  {
-    id: '1',
-    title: 'Reading book',
-    priority: 'High',
-    createdAt: '11/06/2023',
-    done: true,
-  },
-  {
-    id: '2',
-    title: 'Buy something',
-    priority: 'Mid',
-    createdAt: '12/06/2023',
-    done: false,
-  },
-  {
-    id: '3',
-    title: 'Doing Homework',
-    priority: 'Low',
-    createdAt: '13/06/2023',
-    done: true,
-  },
-]
+const todoStore = useTodoStore()
 </script>
 
 <template>
@@ -36,7 +15,7 @@ const todos = [
       <button>Show Todo</button>
     </div>
 
-    <div v-for="todo in todos" :key="todo.id">
+    <div v-for="todo in todoStore.done" :key="todo.id">
       <Wrapper>
         <TodoItem :todo="todo" />
       </Wrapper>
