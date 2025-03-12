@@ -4,13 +4,24 @@ import Wrapper from '@/components/Wrapper.vue'
 
 const todos = [
   {
-    id: 1,
-    title: 'a',
+    id: '1',
+    title: 'Reading book',
+    priority: 'High',
+    createdAt: '11/06/2023',
     done: true,
   },
   {
-    id: 2,
-    title: 'b',
+    id: '2',
+    title: 'Buy something',
+    priority: 'Mid',
+    createdAt: '12/06/2023',
+    done: false,
+  },
+  {
+    id: '3',
+    title: 'Doing Homework',
+    priority: 'Low',
+    createdAt: '13/06/2023',
     done: true,
   },
 ]
