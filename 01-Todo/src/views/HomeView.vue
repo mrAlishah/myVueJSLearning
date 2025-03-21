@@ -23,10 +23,20 @@ const setTodoFilter = () => {
       </button>
     </div>
 
-    <div v-for="todo in todoStore.sorted" :key="todo.id">
-      <Wrapper>
-        <TodoItem :todo="todo" />
-      </Wrapper>
+    <div v-if="todoFilter === 'all'">
+      <div v-for="todo in todoStore.sorted" :key="todo.id">
+        <Wrapper>
+          <TodoItem :todo="todo" />
+        </Wrapper>
+      </div>
+    </div>
+
+    <div v-if="todoFilter === 'done'">
+      <div v-for="todo in todoStore.done" :key="todo.id">
+        <Wrapper>
+          <TodoItem :todo="todo" />
+        </Wrapper>
+      </div>
     </div>
   </div>
 </template>
