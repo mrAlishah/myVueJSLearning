@@ -38,10 +38,15 @@ export const useTodoStore = defineStore('todo-store', {
     sorted() {
       return this.todo.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     },
+    //done: (state) => state.todo.filter( todo => todo.done )
     done: (state) =>
       state.todo
         .filter((p) => p.done)
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)),
+    // todoCount: (state) => state.todo.length,
+    todoCount() {
+      return this.todo.length
+    },
   },
   // methods , Events or Write and Set Data
   actions: {
@@ -50,6 +55,9 @@ export const useTodoStore = defineStore('todo-store', {
     },
     addTodo(todo) {
       //ToDo
+    },
+    deleteTodo(id) {
+      this.todo = this.todo.filter((p) => p.id !== id)
     },
   },
 })

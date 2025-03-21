@@ -16,7 +16,7 @@ const setTodoFilter = () => {
   <div>
     <div class="header">
       <div>
-        <h3>{{ todoFilter === 'all' ? 'All todo' : 'Done todo' }}</h3>
+        <h3>{{ todoFilter === 'all' ? 'All todo' : 'Done todo' }} ({{ todoStore.todoCount }})</h3>
       </div>
       <button @click="setTodoFilter">
         {{ todoFilter === 'all' ? 'Show done todo' : 'Show all todo' }}

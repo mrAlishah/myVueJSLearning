@@ -1,12 +1,23 @@
+<script setup>
+import { useTodoStore } from '@/stores/TodoStore'
+
+const todoStore = useTodoStore()
+
+defineProps({
+  todo: {
+    type: Object,
+    required: true,
+  },
+})
+</script>
+
 <template>
   <div class="content">
     <div class="header">
       <span>date: {{ todo.createdAt }}</span>
 
       <div class="action">
-        <button class="material-icons del" @click="console.log('Event Delete fired')">
-          delete
-        </button>
+        <button class="material-icons del" @click="todoStore.deleteTodo(todo.id)">delete</button>
         <label class="container">
           {{ todo.done ? 'Done' : 'Pending' }}
           <input
@@ -23,15 +34,6 @@
     <p>{{ todo.priority }}</p>
   </div>
 </template>
-
-<script setup>
-defineProps({
-  todo: {
-    type: Object,
-    required: true,
-  },
-})
-</script>
 
 <style lang="scss" scoped>
 .content {
